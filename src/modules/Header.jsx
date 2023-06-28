@@ -1,83 +1,67 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import MobileNav from './MobileNav';
+import { LinkItem } from './LinkItem';
 
 export default function Header() {
-  const [nav, setNav] = useState(false);
-  const [contact, setContact] = useState(false);
+  const location = useLocation();
 
-  const LinkItem = ({ to, label }) => (
-    <li>
-      <Link onClick={handleClick} className="w-full block py-4 px-2" to={to}>
-        {label}
-      </Link>
-    </li>
-  );
+  const [nav, setNav] = useState(false);
 
   function handleClick() {
     setNav((prev) => !prev);
   }
 
-  function handleContact() {
-    setContact((prev) => !prev);
-  }
-
   return (
     <header className="bg-secondary items-center h-20 w-full flex justify-between text-2xl text-primary relative drop-shadow-lg">
-      <h2 className="">Franco Miño</h2>
-      <button className="h-16 w-16 " onClick={handleClick}>
+      <h2 className="">
+        {'< '}Franco Miño{' />'}
+      </h2>
+      <button className="h-16 w-16 md:hidden" onClick={handleClick}>
         <i className="fa-solid fa-bars "></i>
       </button>{' '}
-      <nav
-        className={
-          nav
-            ? 'bg-secondary absolute top-full w-60 h-screen right-0 translate-x-0 transition-all  z-10'
-            : 'bg-secondary invisible absolute top-full -right-full transition-all h-screen w-40'
-        }
-      >
-        <ul className=" divide-y-2 bg-secondary divide-details  relative z-10">
-          <LinkItem label={'Home'} to="/" />
-          <LinkItem label={'Projects / works'} to="Works" />
-          <LinkItem label={'About Me'} to="about" />
-          <li onClick={handleContact}>
-            <a className="w-full block py-4 px-2">
-              Contact{' '}
-              <i
-                className={
-                  contact
-                    ? 'fa-solid fa-caret-right transition-all rotate-90'
-                    : 'fa-solid fa-caret-right  transition-all'
-                }
-              ></i>
-            </a>
-          </li>
-        </ul>
-        <ul
-          className={
-            contact
-              ? 'divide-y-2 divide-details translate-y-0 transition-all relative z-0 text-xl'
-              : 'divide-y-2 divide-details -translate-y-full transition-all invisible relative z-0 text-xl'
-          }
-        >
-          <li>
-            <a className="flex justify-between w-full  py-4 px-2">
-              <i className="fa-regular fa-envelope"></i>
-              <span>E-mail me</span>
-            </a>
-          </li>
-          <li>
-            <a className="flex justify-between w-full  py-4 px-2">
-              <i className="fa-brands fa-github"></i>
-              <span>Github</span>
-            </a>
-          </li>
-          <li>
-            <a className="flex justify-between w-full  py-4 px-2">
-              <i className="fa-brands fa-linkedin"></i>
-              <span>LinkedIn</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <Nav />
+      <MobileNav nav={nav} onClick={handleClick} />
     </header>
+  );
+}
+
+function Nav() {
+  return (
+    <nav className="hidden w-max h-full md:flex items-center text-xl">
+      <ul className="flex divide-x divide-gray-700 items-end h-full">
+        <LinkItem label={'Home'} location={location} to="/" />
+        <LinkItem label={'Projects / works'} location={location} to="/Works" />
+        <LinkItem label={'About Me'} location={location} to="/about" />
+        <li className="group relative cursor-pointer">
+          <a className="w-full block py-4 px-2">
+            Contact{' '}
+            <i className=" fa-solid fa-caret-right group-hover:rotate-90 transition-all"></i>
+          </a>
+          <div className="absolute w-[10rem] right-0 h-max hidden group-hover:block">
+            <ul className="divide-y-2 divide-details bg-secondary transition-all text-xl">
+              <li className="">
+                <a className="flex items-center justify-between w-full  py-4 px-2">
+                  <i className="fa-regular fa-envelope"></i>
+                  <span>E-mail me</span>
+                </a>
+              </li>
+              <li className="">
+                <a className="flex items-center justify-between w-full  py-4 px-2">
+                  <i className="fa-brands fa-github"></i>
+                  <span>Github</span>
+                </a>
+              </li>
+              <li className="">
+                <a className="flex items-center justify-between w-full  py-4 px-2">
+                  <i className="fa-brands fa-linkedin"></i>
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
   );
 }
