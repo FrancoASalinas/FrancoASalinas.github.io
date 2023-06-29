@@ -13,7 +13,7 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-secondary items-center h-16 w-full flex justify-between text-2xl text-primary drop-shadow-lg fixed z-50 border-b border-[#333] ">
+    <header className="bg-secondary items-center h-16 w-full flex justify-between text-2xl text-primary drop-shadow-lg fixed z-50 border-b border-[#333]">
       <h2 className="p-2">
         <Link to="/">
           {'< '}Franco Miño{' />'}
