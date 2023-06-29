@@ -12,7 +12,7 @@ export default function MobileNav({ nav, onClick }) {
     <nav
       className={
         nav
-          ? 'md:hidden bg-secondary absolute top-full w-60 h-screen right-0 translate-x-0 transition-all  z-10'
+          ? 'md:hidden bg-secondary absolute top-full w-60 h-screen right-0 translate-x-0 transition-all  z-100'
           : 'md:hidden bg-secondary invisible absolute top-full -right-full transition-all h-screen w-40'
       }
     >
@@ -57,13 +57,21 @@ export default function MobileNav({ nav, onClick }) {
           </a>
         </li>
         <li>
-          <a className="flex justify-between w-full  py-4 px-2">
+          <a
+            href="https://github.com/FrancoASalinas"
+            target="_blank"
+            className="flex justify-between w-full  py-4 px-2"
+          >
             <i className="fa-brands fa-github"></i>
             <span>Github</span>
           </a>
         </li>
         <li>
-          <a className="flex justify-between w-full  py-4 px-2">
+          <a
+            href="https://www.linkedin.com/in/franco-andres-salinas-mi%C3%B1o/"
+            target="_blank"
+            className="flex justify-between w-full  py-4 px-2"
+          >
             <i className="fa-brands fa-linkedin"></i>
             <span>LinkedIn</span>
           </a>

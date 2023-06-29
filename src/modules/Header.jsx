@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import MobileNav from './MobileNav';
 import { LinkItem } from './LinkItem';
 
@@ -13,9 +13,11 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-secondary items-center h-20 w-full flex justify-between text-2xl text-primary relative drop-shadow-lg">
-      <h2 className="">
-        {'< '}Franco Miño{' />'}
+    <header className="bg-secondary items-center h-16 w-full flex justify-between text-2xl text-primary drop-shadow-lg fixed z-50 border-b border-[#333] ">
+      <h2 className="p-2">
+        <Link to="/">
+          {'< '}Franco Miño{' />'}
+        </Link>
       </h2>
       <button className="h-16 w-16 md:hidden" onClick={handleClick}>
         <i className="fa-solid fa-bars "></i>
@@ -38,7 +40,7 @@ function Nav() {
             Contact{' '}
             <i className=" fa-solid fa-caret-right group-hover:rotate-90 transition-all"></i>
           </a>
-          <div className="absolute w-[10rem] right-0 h-max hidden group-hover:block">
+          <div className="absolute w-[10rem] right-0 h-max hidden group-hover:block shadow-outline">
             <ul className="divide-y-2 divide-details bg-secondary transition-all text-xl">
               <li className="">
                 <a className="flex items-center justify-between w-full  py-4 px-2">
@@ -47,13 +49,21 @@ function Nav() {
                 </a>
               </li>
               <li className="">
-                <a className="flex items-center justify-between w-full  py-4 px-2">
+                <a
+                  href="https://github.com/FrancoASalinas"
+                  target="_blank"
+                  className="flex items-center justify-between w-full  py-4 px-2"
+                >
                   <i className="fa-brands fa-github"></i>
                   <span>Github</span>
                 </a>
               </li>
               <li className="">
-                <a className="flex items-center justify-between w-full  py-4 px-2">
+                <a
+                  href="https://www.linkedin.com/in/franco-andres-salinas-mi%C3%B1o/"
+                  target="_blank"
+                  className="flex items-center justify-between w-full  py-4 px-2"
+                >
                   <i className="fa-brands fa-linkedin"></i>
                   <span>LinkedIn</span>
                 </a>
