@@ -3,6 +3,12 @@ import Card from '../modules/Card';
 import CardContent from '../modules/CardContent';
 import CardsContainer from '../modules/CardsContainer';
 import Typewriter from 'typewriter-effect';
+import wattpad from '../assets/wattpad.png';
+import webpage from '../assets/webpage.png';
+import todo from '../assets/todo.png';
+import chelsea from '../assets/chelsea.png';
+import { useState } from 'react';
+import Skillset from '../modules/Skillset';
 
 export default function Welcome() {
   return (
@@ -25,40 +31,49 @@ export default function Welcome() {
         </p>
       </header>
       <article className="mt-20 bg-secondary flex flex-col align-center p-3">
-        <h2 className="text-2xl mb-10 ">
-          These are some of my{' '}
-          <Link to="/Works" className="text-[#E8A005] underline">
-            projects
-          </Link>
-          :
-        </h2>
-        <CardsContainer className="flex flex-wrap gap-10 md:grid xl:grid-cols-3 2xl:grid-cols-4 grid-cols-2 items-center justify-center">
-          <Card label={'Tic-Tac-Toe'} src="src\assets\tictac.png">
-            <CardContent
-              linkPage={'https://francoasalinas.github.io/TicTacToe-project/'}
-              desc="Tic-Tac-Toe game using vanilla Javascript"
-            />
-          </Card>
-          <Card label={'To-Do List'} codelink="" src="src/assets/todo.png">
-            <CardContent
-              linkPage={'https://francoasalinas.github.io/To-Do-List/'}
-              desc="To-Do list using drag & drop"
-            />
-          </Card>
-          <Card label={'Weather App'} codelink="" src="src/assets/weather.png">
-            <CardContent
-              desc="Weather App using Weather API"
-              linkPage={'https://francoasalinas.github.io/Weather-app/'}
-            />
-          </Card>
-          <Card label="See all my projects" src="https://picsum.photos/1000">
-            <CardContent>
-              <button className="bg-[#E8A005] text-secondary rounded-md p-1 m-1">
-                <Link to="/Works">Let's go!</Link>
-              </button>
-            </CardContent>
-          </Card>
-        </CardsContainer>
+        <section>
+          <h2 className="text-2xl mb-10 ">
+            These are some of my{' '}
+            <Link to="/Works" className="text-[#E8A005] underline">
+              projects
+            </Link>
+            :
+          </h2>
+          <CardsContainer className="flex flex-wrap gap-10 md:grid xl:grid-cols-3 2xl:grid-cols-4 grid-cols-2 items-center justify-center">
+            <Card label="Chelsea clone" src={chelsea} cover>
+              <CardContent
+                desc="My last project, used React & Tailwind for this one"
+                linkPage="https://francoasalinas.github.io/Chelsea-clone-project/"
+              />
+            </Card>
+            <Card label="Wattpad Clone" src={wattpad} cover>
+              <CardContent
+                desc="This was my first try cloning a webpage, I used React and SCSS"
+                linkPage="https://francoasalinas.github.io/Wattpad-clone/"
+              />
+            </Card>
+            <Card label="WebPage Project" src={webpage} cover>
+              <CardContent
+                desc="First Webpage I made, I used vanilla Javascript"
+                linkPage="https://francoasalinas.github.io/webpage-project/"
+              />
+            </Card>
+            <Card label={'To-Do List'} src={todo}>
+              <CardContent
+                linkPage={'https://francoasalinas.github.io/To-Do-List/'}
+                desc="To-Do list using drag & drop"
+              />
+            </Card>
+            <Card label="See all my projects" src="https://picsum.photos/1000">
+              <CardContent>
+                <button className="bg-[#E8A005] text-secondary rounded-md p-1 m-1">
+                  <Link to="/Works">Let's go!</Link>
+                </button>
+              </CardContent>
+            </Card>
+          </CardsContainer>
+        </section>
+        <div className="w-full border-t border-white border-opacity-30 my-16 px-24"></div>
       </article>
     </>
   );

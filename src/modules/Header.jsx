@@ -40,7 +40,7 @@ function Nav() {
             Contact{' '}
             <i className=" fa-solid fa-caret-right group-hover:rotate-90 transition-all"></i>
           </a>
-          <div className="absolute w-[10rem] right-0 h-max hidden group-hover:block shadow-outline">
+          <div className="absolute w-[10rem] border-details border right-0 h-max hidden group-hover:block shadow-outline">
             <ul className="divide-y-2 divide-details bg-secondary transition-all text-xl">
               <li className="">
                 <a className="flex items-center justify-between w-full  py-4 px-2">
