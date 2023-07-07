@@ -7,8 +7,8 @@ import wattpad from '../assets/wattpad.png';
 import webpage from '../assets/webpage.png';
 import todo from '../assets/todo.png';
 import chelsea from '../assets/chelsea.png';
-import { useState } from 'react';
 import Skillset from '../modules/Skillset';
+import codeimg from '../assets/codeimg.jpg';
 
 export default function Welcome() {
   return (
@@ -34,7 +34,7 @@ export default function Welcome() {
         <section>
           <h2 className="text-2xl mb-10 ">
             These are some of my{' '}
-            <Link to="/Works" className="text-[#E8A005] underline">
+            <Link to="works" className="text-[#E8A005] underline">
               projects
             </Link>
             :
@@ -64,16 +64,17 @@ export default function Welcome() {
                 desc="To-Do list using drag & drop"
               />
             </Card>
-            <Card label="See all my projects" src="https://picsum.photos/1000">
+            <Card label="See all my projects" src={codeimg}>
               <CardContent>
                 <button className="bg-[#E8A005] text-secondary rounded-md p-1 m-1">
-                  <Link to="/Works">Let's go!</Link>
+                  <Link to="works">Let's go!</Link>
                 </button>
               </CardContent>
             </Card>
           </CardsContainer>
         </section>
         <div className="w-full border-t border-white border-opacity-30 my-16 px-24"></div>
+        <Skillset />
       </article>
     </>
   );

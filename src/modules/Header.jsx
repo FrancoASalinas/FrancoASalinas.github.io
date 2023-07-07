@@ -15,7 +15,7 @@ export default function Header() {
   return (
     <header className="bg-secondary items-center h-16 w-full flex justify-between text-2xl text-primary drop-shadow-lg fixed z-50 border-b border-[#333]">
       <h2 className="p-2">
-        <Link to="/">
+        <Link to="/Portfolio/">
           {'< '}Franco Miño{' />'}
         </Link>
       </h2>
@@ -29,12 +29,21 @@ export default function Header() {
 }
 
 function Nav() {
+  console.log(location);
   return (
     <nav className="hidden w-max h-full md:flex items-center text-xl">
       <ul className="flex divide-x divide-gray-700 items-end h-full">
-        <LinkItem label={'Home'} location={location} to="/" />
-        <LinkItem label={'Projects / works'} location={location} to="/Works" />
-        <LinkItem label={'About Me'} location={location} to="/about" />
+        <LinkItem label={'Home'} location={location} to="/Portfolio/" />
+        <LinkItem
+          label={'Projects / works'}
+          location={location}
+          to="/Portfolio/works"
+        />
+        <LinkItem
+          label={'About Me'}
+          location={location}
+          to="/Portfolio/about"
+        />
         <li className="group relative cursor-pointer">
           <a className="w-full block py-4 px-2">
             Contact{' '}
@@ -42,12 +51,6 @@ function Nav() {
           </a>
           <div className="absolute w-[10rem] border-details border right-0 h-max hidden group-hover:block shadow-outline">
             <ul className="divide-y-2 divide-details bg-secondary transition-all text-xl">
-              <li className="">
-                <a className="flex items-center justify-between w-full  py-4 px-2">
-                  <i className="fa-regular fa-envelope"></i>
-                  <span>E-mail me</span>
-                </a>
-              </li>
               <li className="">
                 <a
                   href="https://github.com/FrancoASalinas"
@@ -73,5 +76,21 @@ function Nav() {
         </li>
       </ul>
     </nav>
+  );
+}
+
+function Tooltip() {
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(setHidden(true), []);
+
+  return (
+    <div
+      className={`absolute bg-white bg-opacity-50 top-0 left-0 z-50 transition-[opacity 3s] ${
+        hidden ? 'opacity-0' : 'opacity-100'
+      }`}
+    >
+      <p>Copied 'frankow222@gmail.com' to clipboard!</p>
+    </div>
   );
 }

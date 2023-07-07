@@ -15,7 +15,7 @@ import Welcome from './pages/Welcome.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Home />} errorElement={<ErrorPage />}>
+    <Route path="/Portfolio/" element={<Home />} errorElement={<ErrorPage />}>
       <Route index element={<Welcome />} />
       <Route path="about" element={<AboutMe />} />
       <Route path="works" element={<Projects />} />

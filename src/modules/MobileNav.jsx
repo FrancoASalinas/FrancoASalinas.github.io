@@ -17,20 +17,25 @@ export default function MobileNav({ nav, onClick }) {
       }
     >
       <ul className=" divide-y-2 bg-secondary divide-details  relative z-10">
-        <LinkItem label={'Home'} location={location} onClick={onClick} to="/" />
+        <LinkItem
+          label={'Home'}
+          location={location}
+          onClick={onClick}
+          to="/Portfolio/"
+        />
         <LinkItem
           label={'Projects / works'}
           onClick={onClick}
           location={location}
-          to="/Works"
+          to="/Portfolio/works"
         />
         <LinkItem
           label={'About Me'}
           onClick={onClick}
           location={location}
-          to="/about"
+          to="/Portfolio/about"
         />
-        <li onClick={handleContact}>
+        <li onClick={handleContact} className="cursor-pointer">
           <a className="w-full block py-4 px-2">
             Contact{' '}
             <i
@@ -50,12 +55,6 @@ export default function MobileNav({ nav, onClick }) {
             : 'divide-y-2 divide-details -translate-y-full transition-all invisible relative z-0 text-xl'
         }
       >
-        <li>
-          <a className="flex justify-between w-full  py-4 px-2">
-            <i className="fa-regular fa-envelope"></i>
-            <span>E-mail me</span>
-          </a>
-        </li>
         <li>
           <a
             href="https://github.com/FrancoASalinas"

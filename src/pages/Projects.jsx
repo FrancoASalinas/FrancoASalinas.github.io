@@ -13,9 +13,7 @@ import chelsea from '../assets/chelsea.png';
 export default function Projects() {
   return (
     <div className="w-full bg-secondary mt-16 p-5">
-      <h2 className="text-3xl">
-        This is where you can see all my projects, have fun!.
-      </h2>
+      <h2 className="text-3xl">This is where you can see all my projects:</h2>
       <div className="mt-16">
         <CardsContainer>
           <Card label="Chelsea clone" src={chelsea} cover>
