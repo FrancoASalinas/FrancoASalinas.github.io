@@ -9,6 +9,7 @@ import weather from '../assets/weather.png';
 import webpage from '../assets/webpage.png';
 import todo from '../assets/todo.png';
 import chelsea from '../assets/chelsea.png';
+import recipescalc from '../assets/recipescalc.png';
 
 export default function Projects() {
   return (
@@ -20,6 +21,12 @@ export default function Projects() {
             <CardContent
               desc="My last project, used React & Tailwind for this one"
               linkPage="https://francoasalinas.github.io/Chelsea-clone-project/"
+            />
+          </Card>
+          <Card label={'Recipes Calculator'} src={recipescalc}>
+            <CardContent
+              linkPage={'https://francoasalinas.github.io/Recipes-calculator/'}
+              desc="SPA that calculates the amount of ingredients for a given recipe with a modified output target. I made this one using React & MaterialUI"
             />
           </Card>
           <Card label="Wattpad Clone" src={wattpad} cover>

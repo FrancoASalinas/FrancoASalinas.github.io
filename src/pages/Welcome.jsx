@@ -3,12 +3,11 @@ import Card from '../modules/Card';
 import CardContent from '../modules/CardContent';
 import CardsContainer from '../modules/CardsContainer';
 import Typewriter from 'typewriter-effect';
-import wattpad from '../assets/wattpad.png';
 import webpage from '../assets/webpage.png';
-import todo from '../assets/todo.png';
 import chelsea from '../assets/chelsea.png';
 import Skillset from '../modules/Skillset';
 import codeimg from '../assets/codeimg.jpg';
+import recipescalc from '../assets/recipescalc.png';
 
 export default function Welcome() {
   return (
@@ -46,22 +45,18 @@ export default function Welcome() {
                 linkPage="https://francoasalinas.github.io/Chelsea-clone-project/"
               />
             </Card>
-            <Card label="Wattpad Clone" src={wattpad} cover>
-              <CardContent
-                desc="This was my first try cloning a webpage, I used React and SCSS"
-                linkPage="https://francoasalinas.github.io/Wattpad-clone/"
-              />
-            </Card>
             <Card label="WebPage Project" src={webpage} cover>
               <CardContent
                 desc="First Webpage I made, I used vanilla Javascript"
                 linkPage="https://francoasalinas.github.io/webpage-project/"
               />
             </Card>
-            <Card label={'To-Do List'} src={todo}>
+            <Card label={'Recipes Calculator'} src={recipescalc}>
               <CardContent
-                linkPage={'https://francoasalinas.github.io/To-Do-List/'}
-                desc="To-Do list using drag & drop"
+                linkPage={
+                  'https://francoasalinas.github.io/Recipes-calculator/'
+                }
+                desc="SPA that calculates the amount of ingredients for a given recipe with a modified output target. I made this one using React & MaterialUI"
               />
             </Card>
             <Card label="See all my projects" src={codeimg}>
