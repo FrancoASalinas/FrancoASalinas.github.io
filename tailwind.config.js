@@ -10,6 +10,7 @@ export default {
       },
       fontFamily: {
         title: 'Hind, sans-serif',
+        def: 'Montserrat, sans-serif',
       },
     },
   },

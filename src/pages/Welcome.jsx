@@ -13,7 +13,7 @@ export default function Welcome() {
   return (
     <>
       <header className="bg-black p-5 mt-16">
-        <h1 className="text-5xl text-primary py-5 font font-title">
+        <h1 className="text-5xl text-primary font-bold py-5  font-def">
           <Typewriter
             onInit={(typewriter) => {
               typewriter.typeString(' Hi! my name is Franco').start();

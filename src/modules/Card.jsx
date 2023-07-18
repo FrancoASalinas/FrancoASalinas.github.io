@@ -8,7 +8,7 @@ export default function Card({ label, src, children, cover }) {
           <img
             src={src}
             alt=""
-            className={`rounded-3xl aspect-square ${
+            className={`rounded-3xl w-full h-full aspect-square ${
               cover ? 'object-cover' : ''
             } `}
           />
