@@ -47,7 +47,8 @@ export default function Skillset() {
               } transition-all relative z-0`}
             >
               <li className="w-full p-3 flex gap-5">
-                -Tailwind <img src={tailwind} className=" w-8  h-9 "></img>
+                -Tailwind{' '}
+                <img src={tailwind} className=" w-[34]  h-[20] "></img>
               </li>
               <li className="p-3 w-full flex gap-5">
                 -Sass <img src={sass} className=" w-8  h-8"></img>
