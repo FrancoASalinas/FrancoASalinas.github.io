@@ -12,7 +12,7 @@ import recipescalc from '../assets/recipescalc.png';
 export default function Welcome() {
   return (
     <>
-      <header className="bg-black p-5 mt-16">
+      <header className=" p-5 py-10 sm:py-24 sm:px-36 mx-auto mt-16">
         <h1 className="text-5xl text-primary font-bold py-5  font-def">
           <Typewriter
             onInit={(typewriter) => {
@@ -29,7 +29,7 @@ export default function Welcome() {
           new things.
         </p>
       </header>
-      <article className="mt-20 bg-secondary flex flex-col align-center p-3">
+      <article className="mt-20 sm:min-w-[640px] sm:w-3/4 rounded-2xl mx-auto bg-secondary flex flex-col align-center p-5 mb-16">
         <section>
           <h2 className="text-2xl mb-10 ">
             These are some of my{' '}
@@ -38,7 +38,7 @@ export default function Welcome() {
             </Link>
             :
           </h2>
-          <CardsContainer className="flex flex-wrap gap-10 md:grid xl:grid-cols-3 2xl:grid-cols-4 grid-cols-2 items-center justify-center">
+          <CardsContainer className="flex flex-wrap gap-10 md:grid items-center justify-center">
             <Card label="Chelsea clone" src={chelsea} cover>
               <CardContent
                 desc="My last project, used React & Tailwind for this one"

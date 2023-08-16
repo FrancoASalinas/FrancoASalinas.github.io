@@ -13,9 +13,9 @@ import recipescalc from '../assets/recipescalc.png';
 
 export default function Projects() {
   return (
-    <div className="w-full bg-secondary mt-16 p-5">
-      <h2 className="text-3xl">This is where you can see all my projects:</h2>
-      <div className="mt-16">
+    <>
+      <div className=" my-28 sm:min-w-[640px] sm:w-3/4 rounded-2xl mx-auto bg-secondary flex flex-col align-center p-5  ">
+      <header className="text-3xl p-5 ">This is where you can see all my projects:</header>
         <CardsContainer>
           <Card label="Chelsea clone" src={chelsea} cover>
             <CardContent
@@ -70,10 +70,10 @@ export default function Projects() {
             <CardContent
               desc="The legendary calculator, my first project on Javascript."
               linkPage="https://francoasalinas.github.io/calcProject/"
-            />
+              />
           </Card>
         </CardsContainer>
       </div>
-    </div>
+  </>
   );
 }
