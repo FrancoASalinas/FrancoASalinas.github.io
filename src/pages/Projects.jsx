@@ -10,6 +10,7 @@ import webpage from '../assets/webpage.png';
 import todo from '../assets/todo.png';
 import chelsea from '../assets/chelsea.png';
 import recipescalc from '../assets/recipescalc.png';
+import football from '../assets/football.png';
 
 export default function Projects() {
   return (
@@ -17,6 +18,14 @@ export default function Projects() {
       <div className=" my-28 sm:min-w-[640px] sm:w-3/4 rounded-2xl mx-auto bg-secondary flex flex-col align-center p-5  ">
       <header className="text-3xl p-5 ">This is where you can see all my projects:</header>
         <CardsContainer>
+        <Card label={'Football Stats'} src={football}>
+              <CardContent
+                linkPage={
+                  'https://francoasalinas.github.io/FootballStats-v2/'
+                }
+                desc="PWA that uses Football API, showing stats for players, competitions and teams using React, Tailwind and libraries like react-router and Zustand."
+              />
+            </Card>
           <Card label="Chelsea clone" src={chelsea} cover>
             <CardContent
               desc="My last project, used React & Tailwind for this one"

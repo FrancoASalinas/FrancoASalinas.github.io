@@ -34,7 +34,6 @@ export default function Header() {
 }
 
 function Nav() {
-  console.log(location);
   return (
     <nav className="hidden w-max h-full md:flex items-center text-xl">
       <ul className="flex divide-x divide-gray-700 items-end h-full">
