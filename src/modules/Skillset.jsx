@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { motion } from 'framer-motion';
 import css from '../assets/css.png';
 import html from '../assets/html.png';
 import js from '../assets/js.png';
@@ -7,127 +7,47 @@ import sass from '../assets/sass.png';
 import tailwind from '../assets/tailwind.png';
 import git from '../assets/git.png';
 import github from '../assets/github.png';
+import ts from '../assets/ts.png';
 
 export default function Skillset() {
-  const [accordion, setAccordion] = useState(0);
 
+  const ul = {
+    show: {opacity: 100, transition: {
+      staggerChildren: .3,
+      delayChildren: .4
+    }},
+    hidden: {opacity: 0}
+  }
+
+  const item = {
+    show: {opacity: 100},
+    hidden: {opacity: 0}
+  }
+
+  const CustomListItem = ({src, label}) => {
+    return (
+      <motion.li className='group w-16 flex hover:scale-150 relative items-center justify-center transition-all flex-col z-1 hover:z-10' variants={item}>
+      <img className='w-10 h-auto' src={src} alt={label} />
+      <span className='group-hover:opacity-100 select-none absolute top-full z-10 opacity-0'>{label}</span>
+    </motion.li>
+
+    )
+  }
   return (
     <section className="space-y-10 pb-10">
-      <h2 className="text-2xl">My Skillset</h2>
+      <motion.h2 viewport={{once: true}} whileInView={{opacity: 100, x: 0}} initial={{opacity: 0, x: -200}} transition={{delay: 1, type: 'just'}} className="text-2xl">My Skillset:</motion.h2>
       <div className="sm:flex flex-col justify-center items-center">
-        <ul className="w-full bg-[#111] divide-details divide-y overflow-hidden sm:w-1/2">
-          <li className=" flex flex-col">
-            <span className="flex justify-between relative z-10 bg-[#111] w-full p-3 ">
-              <div className="flex gap-3 items-center">
-                <img src={html} className="w-8  h-8"></img>
-                <img src={css} className="w-5  h-8"></img>
-                HTML & CSS
-              </div>
-              <div className="w-8 h-8">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  onClick={() => setAccordion((prev) => (prev !== 1 ? 1 : 0))}
-                  className={`fa-solid w-full h-full ${
-                    accordion === 1 ? ' rotate-90' : ' rotate-0'
-                  } fa-angle-right hover:bg-details rounded-full px-3 py-2 transition-all cursor-pointer self-end`}
-                  viewBox="0 0 320 512"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
-                  />
-                </svg>
-              </div>
-            </span>
-            <ul
-              className={`${
-                accordion === 1
-                  ? 'visible w-full h-full translate-y-0'
-                  : 'invisible w-0 h-0 -translate-y-full'
-              } transition-all relative z-0`}
-            >
-              <li className="w-full p-3 flex gap-5">
-                -Tailwind{' '}
-                <img src={tailwind} className=" w-[34]  h-[20] "></img>
-              </li>
-              <li className="p-3 w-full flex gap-5">
-                -Sass <img src={sass} className=" w-8  h-8"></img>
-              </li>
-            </ul>
-          </li>
-          <li className=" flex flex-col group">
-            <span className="flex justify-between relative z-10 bg-[#111] w-full p-3">
-              <div className="flex gap-3 items-center">
-                <img src={js} className=" w-8  h-8"></img>
-                <img className="group-hover:translate-x-0 w-5  h-5 invisible"></img>
-                Javascript
-              </div>
-
-              <div className="w-8 h-8">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  onClick={() => setAccordion((prev) => (prev !== 2 ? 2 : 0))}
-                  className={`fa-solid w-full h-full ${
-                    accordion === 2 ? ' rotate-90' : ' rotate-0'
-                  } fa-angle-right hover:bg-details rounded-full px-3 py-2 transition-all cursor-pointer self-end`}
-                  viewBox="0 0 320 512"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
-                  />
-                </svg>
-              </div>
-            </span>
-            <ul
-              className={`${
-                accordion === 2
-                  ? 'visible w-full h-full translate-y-0'
-                  : 'invisible w-0 h-0 -translate-y-full'
-              } transition-all relative z-0`}
-            >
-              <li className="w-full p-3 flex gap-5">
-                -React <img src={react} className=" w-8  h-8"></img>
-              </li>
-            </ul>
-          </li>
-          <li className=" flex flex-col group">
-            <span className="flex justify-between relative z-10 bg-[#111] w-full p-3">
-              <div className="flex gap-3 items-center">
-                <img src={git} className=" w-8  h-8"></img>
-                <img className="group-hover:translate-x-0 w-5  h-5 invisible"></img>
-                Git
-              </div>
-
-              <div className="w-8 h-8">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  onClick={() => setAccordion((prev) => (prev !== 3 ? 3 : 0))}
-                  className={`fa-solid w-full h-full ${
-                    accordion === 3 ? ' rotate-90' : ' rotate-0'
-                  } fa-angle-right hover:bg-details rounded-full px-3 py-2 transition-all cursor-pointer self-end`}
-                  viewBox="0 0 320 512"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
-                  />
-                </svg>
-              </div>
-            </span>
-            <ul
-              className={`${
-                accordion === 3
-                  ? 'visible w-full h-full translate-y-0'
-                  : 'invisible w-0 h-0 -translate-y-full'
-              } transition-all relative z-0`}
-            >
-              <li className="w-full p-3 flex gap-5">
-                Github <img src={github} className=" w-8  h-8"></img>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <motion.ul viewport={{once: true}} variants={ul} className='flex items-center flex-wrap gap-x-5 gap-y-8 justify-center place-items-center w-full' initial={'hidden'} whileInView={'show'}>
+          <CustomListItem src={html} label='HTML' />
+          <CustomListItem src={css} label='CSS' />
+          <CustomListItem src={js} label='Javascript' />
+          <CustomListItem src={ts} label='Typescript' />
+          <CustomListItem src={react} label='React' />
+          <CustomListItem src={sass} label='Sass' />
+          <CustomListItem src={tailwind} label='Tailwind' />
+          <CustomListItem src={git} label='Git' />
+          <CustomListItem src={github} label='Github' />
+        </motion.ul>
       </div>
     </section>
   );

@@ -30,10 +30,6 @@ export default function Welcome() {
                 .pauseFor(500)
                 .deleteChars(6)
                 .pauseFor(500)
-                .typeString('Salinas')
-                .pauseFor(500)
-                .deleteChars(7)
-                .pauseFor(500)
                 .typeString('Miño');
             }}
             options={{
@@ -42,7 +38,7 @@ export default function Welcome() {
             }}
           />
         </h1>
-        <motion.p className="text-2xl flex flex-col  xl:flex-row justify-center gap-2">
+        <p className="text-2xl flex flex-col  xl:flex-row justify-center gap-2">
           <motion.span
             transition={{ delay: 2, type: 'just' }}
             className=" py-5 justify-center flex-wrap text-center flex items-center"
@@ -57,21 +53,19 @@ export default function Welcome() {
           >
             {' Always looking ahead to learn new things.'}
           </motion.span>
-        </motion.p>
+        </p>
       </motion.header>
-      <motion.article
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+      <article
         className="sm:min-w-[640px] sm:w-3/4 rounded-2xl mx-auto flex flex-col align-center p-5 mb-16"
       >
         <section>
-          <h2 className="text-2xl mb-10 ">
+          <motion.h2 className="text-2xl mb-10" viewport={{once: true}} whileInView={{opacity: 100, x: 0}} initial={{opacity: 0, x: -200}} transition={{delay: 1, type: 'just'}}>
             These are some of my{' '}
             <Link to="works" className="text-[#E8A005] underline">
               projects
             </Link>
             :
-          </h2>
+          </motion.h2>
           <CardsContainer className="flex flex-wrap gap-10 md:grid items-center justify-center">
             <Card label={'Football Stats'} src={football}>
               <CardContent
@@ -108,9 +102,9 @@ export default function Welcome() {
             </Card>
           </CardsContainer>
         </section>
-        <div className="w-full border-t border-white border-opacity-30 my-16 px-24"></div>
+        <motion.div whileInView={{opacity: 100}} initial={{opacity: 0}} className="w-full border-t border-white border-opacity-30 my-16 px-24"></motion.div>
         <Skillset />
-      </motion.article>
+      </article>
     </>
   );
 }
