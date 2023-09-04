@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import MobileNav from './MobileNav';
 import { LinkItem } from './LinkItem';
+import { motion,  } from 'framer-motion';
+import useScroll from '../utils/useScroll';
 
 export default function Header() {
-  const location = useLocation();
-
+  const scroll = useScroll();
   const [nav, setNav] = useState(false);
 
   function handleClick() {
@@ -13,7 +14,11 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-secondary items-center h-16 w-full flex justify-between text-2xl text-primary drop-shadow-lg fixed z-50 border-b border-[#333]">
+    <motion.header
+      animate={{opacity: scroll === 0 ? [100, 0] : [0, 100], y: scroll === 0 ? [0, -100] : [-100, 0]}}
+      transition={{ type: 'tween', duration: 0.5 }}
+      className={` bg-secondary items-center h-16 w-full flex justify-between text-2xl text-primary drop-shadow-lg fixed top-0 z-50 border-b border-[#333]`}
+    >
       <h2 className="p-2">
         <Link to="/Portfolio/">
           {'< '}Franco Miño{' />'}
@@ -29,7 +34,7 @@ export default function Header() {
       </button>{' '}
       <Nav />
       <MobileNav nav={nav} onClick={handleClick} />
-    </header>
+    </motion.header>
   );
 }
 

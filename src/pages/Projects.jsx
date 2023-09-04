@@ -28,7 +28,7 @@ export default function Projects() {
             </Card>
           <Card label="Chelsea clone" src={chelsea} cover>
             <CardContent
-              desc="My last project, used React & Tailwind for this one"
+              desc="Chelsea clone page, I used React and Tailwind"
               linkPage="https://francoasalinas.github.io/Chelsea-clone-project/"
             />
           </Card>
@@ -52,7 +52,7 @@ export default function Projects() {
           </Card>
           <Card label="Change Game" src={change}>
             <CardContent
-              desc="This is a game I made for a friend who got a job as a cashier, he wanted some practice at returning the change, so I made him this one using vanilla Javascript."
+              desc="This is a game that looks for simulating change returning, obviusly in it's core is a substraction game, I made this one using vanilla Javascript"
               linkPage="https://francoasalinas.github.io/Generador-de-Vueltos/"
             />
           </Card>

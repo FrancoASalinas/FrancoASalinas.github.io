@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="text-white mt-16 bg-black">
+      <main className="text-white bg-black">
         <Outlet />
       </main>
     </>

@@ -8,16 +8,33 @@ import chelsea from '../assets/chelsea.png';
 import Skillset from '../modules/Skillset';
 import codeimg from '../assets/codeimg.jpg';
 import recipescalc from '../assets/recipescalc.png';
-import football from '../assets/football.png'
+import football from '../assets/football.png';
+import { motion, useScroll } from 'framer-motion';
 
 export default function Welcome() {
+  const scroll = useScroll();
+
   return (
     <>
-      <header className=" p-5 py-10 sm:py-24 sm:px-36 mx-auto mt-16">
-        <h1 className="text-5xl text-primary font-bold py-5  font-def">
+      <motion.header className=" p-3 min-h-screen flex flex-col justify-center gap-5 items-center sm:px-36 mx-auto">
+        <h1 className="xl:text-6xl h-[calc(2.25rem_*_3)] items-center text-3xl text-primary font-bold py-3 w-full justify-center flex font-def">
           <Typewriter
+            component={'p'}
             onInit={(typewriter) => {
-              typewriter.typeString(' Hi! my name is Franco').start();
+              typewriter
+                .pauseFor(500)
+                .typeString('Hi! my name is Franco ')
+                .start()
+                .pauseFor(500)
+                .typeString('Andrés')
+                .pauseFor(500)
+                .deleteChars(6)
+                .pauseFor(500)
+                .typeString('Salinas')
+                .pauseFor(500)
+                .deleteChars(7)
+                .pauseFor(500)
+                .typeString('Miño');
             }}
             options={{
               cursor: '_',
@@ -25,12 +42,28 @@ export default function Welcome() {
             }}
           />
         </h1>
-        <p className="text-2xl ">
-          I'm a self-taught Frontend developer. Always looking ahead to learn
-          new things.
-        </p>
-      </header>
-      <article className="mt-20 sm:min-w-[640px] sm:w-3/4 rounded-2xl mx-auto bg-secondary flex flex-col align-center p-5 mb-16">
+        <motion.p className="text-2xl flex flex-col  xl:flex-row justify-center gap-2">
+          <motion.span
+            transition={{ delay: 2, type: 'just' }}
+            className=" py-5 justify-center flex-wrap text-center flex items-center"
+            animate={{ x: [-300, 0], opacity: [0, 100] }}
+          >
+            I'm a Frontend developer.
+          </motion.span>
+          <motion.span
+            transition={{ delay: 3.5, type: 'just' }}
+            className=" py-5 xl:mt-10 justify-center flex-wrap text-center flex items-center"
+            animate={{ x: [300, 0], opacity: [0, 100] }}
+          >
+            {' Always looking ahead to learn new things.'}
+          </motion.span>
+        </motion.p>
+      </motion.header>
+      <motion.article
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        className="sm:min-w-[640px] sm:w-3/4 rounded-2xl mx-auto flex flex-col align-center p-5 mb-16"
+      >
         <section>
           <h2 className="text-2xl mb-10 ">
             These are some of my{' '}
@@ -42,15 +75,13 @@ export default function Welcome() {
           <CardsContainer className="flex flex-wrap gap-10 md:grid items-center justify-center">
             <Card label={'Football Stats'} src={football}>
               <CardContent
-                linkPage={
-                  'https://francoasalinas.github.io/FootballStats-v2/'
-                }
+                linkPage={'https://francoasalinas.github.io/FootballStats-v2/'}
                 desc="PWA that uses Football API, showing stats for players, competitions and teams using React, Tailwind and libraries like react-router and Zustand."
               />
             </Card>
             <Card label="Chelsea clone" src={chelsea} cover>
               <CardContent
-                desc="My last project, used React & Tailwind for this one"
+                desc="Chelsea clone page, I used React and Tailwind"
                 linkPage="https://francoasalinas.github.io/Chelsea-clone-project/"
               />
             </Card>
@@ -79,7 +110,7 @@ export default function Welcome() {
         </section>
         <div className="w-full border-t border-white border-opacity-30 my-16 px-24"></div>
         <Skillset />
-      </article>
+      </motion.article>
     </>
   );
 }
