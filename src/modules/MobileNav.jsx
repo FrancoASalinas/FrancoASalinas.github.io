@@ -1,14 +1,44 @@
 import { useState } from 'react';
 import { LinkItem } from './LinkItem';
+import useScroll from '../utils/useScroll';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-export default function MobileNav({ nav, onClick }) {
+export default function MobileNav() {
   const [contact, setContact] = useState(false);
+  const scroll = useScroll();
+  const [nav, setNav] = useState(false);
+
+  function handleClick() {
+    setNav((prev) => !prev);
+  }
 
   function handleContact() {
     setContact((prev) => !prev);
   }
 
   return (
+    <motion.header
+      animate={{
+        opacity: !nav && scroll === 0 ? [100, 0] : [0, 100],
+        y: !nav && scroll === 0 ? [0, -100] : [-100, 0],
+      }}
+      transition={{ type: 'tween', duration: 0.5 }}
+      className={`bg-secondary items-center h-16 w-full flex justify-between text-2xl text-primary drop-shadow-lg fixed top-0 z-50 border-b border-[#333]`}
+    >
+      <h2 className="p-2">
+        <Link to="/Portfolio/">
+          {'< '}Franco Miño{' />'}
+        </Link>
+      </h2>
+      <button className="h-8 w-8 md:hidden mx-2" onClick={handleClick}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            fill="currentColor"
+            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+          />
+        </svg>
+      </button>
     <nav
       className={
         nav
@@ -17,13 +47,13 @@ export default function MobileNav({ nav, onClick }) {
       }
     >
       <ul className=" divide-y-2 bg-secondary divide-details  relative z-10">
-        <LinkItem label={'Home'} onClick={onClick} to="/Portfolio/" />
+        <LinkItem label={'Home'} onClick={handleClick} to="/Portfolio/" />
         <LinkItem
           label={'Projects / works'}
-          onClick={onClick}
+          onClick={handleClick}
           to="/Portfolio/works"
         />
-        <LinkItem label={'About Me'} onClick={onClick} to="/Portfolio/about" />
+        <LinkItem label={'About Me'} onClick={handleClick} to="/Portfolio/about" />
         <li onClick={handleContact} className="cursor-pointer">
           <a className="w-full flex gap-1 items-center py-4 px-2">
             Contact{' '}
@@ -81,5 +111,6 @@ export default function MobileNav({ nav, onClick }) {
         </li>
       </ul>
     </nav>
+    </motion.header>
   );
 }
