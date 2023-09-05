@@ -24,7 +24,7 @@ export default function MobileNav() {
         y: !nav && scroll === 0 ? [0, -100] : [-100, 0],
       }}
       transition={{ type: 'tween', duration: 0.5 }}
-      className={`bg-secondary items-center h-16 w-full flex justify-between text-2xl text-primary drop-shadow-lg fixed top-0 z-50 border-b border-[#333]`}
+      className={`bg-secondary items-center h-16 w-full md:hidden flex justify-between text-2xl text-primary drop-shadow-lg fixed top-0 z-50 border-b border-[#333]`}
     >
       <h2 className="p-2">
         <Link to="/Portfolio/">
