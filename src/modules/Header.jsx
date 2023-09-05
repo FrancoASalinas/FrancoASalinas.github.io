@@ -42,19 +42,12 @@ export default function Header() {
 }
 
 function Nav() {
-
   return (
     <nav className="hidden w-max h-full md:flex items-center text-xl">
       <ul className="flex divide-x divide-gray-700 items-end h-full">
         <LinkItem label={'Home'} to="/Portfolio/" />
-        <LinkItem
-          label={'Projects / works'}
-          to="/Portfolio/works"
-        />
-        <LinkItem
-          label={'About Me'}
-          to="/Portfolio/about"
-        />
+        <LinkItem label={'Projects / works'} to="/Portfolio/works" />
+        <LinkItem label={'About Me'} to="/Portfolio/about" />
         <li className="group relative cursor-pointer">
           <a className="w-full py-4 px-2 flex gap-1 items-center">
             Contact{' '}
