@@ -4,7 +4,6 @@ import CardsContainer from '../modules/CardsContainer';
 import calculator from '../assets/calculator.png';
 import change from '../assets/change.png';
 import tictac from '../assets/tictac.png';
-import wattpad from '../assets/wattpad.png';
 import weather from '../assets/weather.png';
 import webpage from '../assets/webpage.png';
 import todo from '../assets/todo.png';
@@ -36,12 +35,6 @@ export default function Projects() {
             <CardContent
               linkPage={'https://francoasalinas.github.io/Recipes-calculator/'}
               desc="SPA that calculates the amount of ingredients for a given recipe with a modified output target. I made this one using React & MaterialUI"
-            />
-          </Card>
-          <Card label="Wattpad Clone" src={wattpad} cover>
-            <CardContent
-              desc="This was my first try cloning a webpage, I used React and SCSS"
-              linkPage="https://francoasalinas.github.io/Wattpad-clone/"
             />
           </Card>
           <Card label="WebPage Project" src={webpage} cover>
