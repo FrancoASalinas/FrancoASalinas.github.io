@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import MobileNav from './MobileNav';
 import { LinkItem } from './LinkItem';
-import { motion,  } from 'framer-motion';
+import { motion } from 'framer-motion';
 import useScroll from '../utils/useScroll';
 
 export default function Header() {
@@ -15,7 +15,10 @@ export default function Header() {
 
   return (
     <motion.header
-      animate={{opacity: scroll === 0 ? [100, 0] : [0, 100], y: scroll === 0 ? [0, -100] : [-100, 0]}}
+      animate={{
+        opacity: scroll === 0 ? [100, 0] : [0, 100],
+        y: scroll === 0 ? [0, -100] : [-100, 0],
+      }}
       transition={{ type: 'tween', duration: 0.5 }}
       className={` bg-secondary items-center h-16 w-full flex justify-between text-2xl text-primary drop-shadow-lg fixed top-0 z-50 border-b border-[#333]`}
     >
@@ -39,18 +42,17 @@ export default function Header() {
 }
 
 function Nav() {
+
   return (
     <nav className="hidden w-max h-full md:flex items-center text-xl">
       <ul className="flex divide-x divide-gray-700 items-end h-full">
-        <LinkItem label={'Home'} location={location} to="/Portfolio/" />
+        <LinkItem label={'Home'} to="/Portfolio/" />
         <LinkItem
           label={'Projects / works'}
-          location={location}
           to="/Portfolio/works"
         />
         <LinkItem
           label={'About Me'}
-          location={location}
           to="/Portfolio/about"
         />
         <li className="group relative cursor-pointer">
@@ -116,21 +118,5 @@ function Nav() {
         </li>
       </ul>
     </nav>
-  );
-}
-
-function Tooltip() {
-  const [hidden, setHidden] = useState(false);
-
-  useEffect(setHidden(true), []);
-
-  return (
-    <div
-      className={`absolute bg-white bg-opacity-50 top-0 left-0 z-50 transition-[opacity 3s] ${
-        hidden ? 'opacity-0' : 'opacity-100'
-      }`}
-    >
-      <p>Copied 'frankow222@gmail.com' to clipboard!</p>
-    </div>
   );
 }

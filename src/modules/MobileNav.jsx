@@ -19,20 +19,17 @@ export default function MobileNav({ nav, onClick }) {
       <ul className=" divide-y-2 bg-secondary divide-details  relative z-10">
         <LinkItem
           label={'Home'}
-          location={location}
           onClick={onClick}
           to="/Portfolio/"
         />
         <LinkItem
           label={'Projects / works'}
           onClick={onClick}
-          location={location}
           to="/Portfolio/works"
         />
         <LinkItem
           label={'About Me'}
           onClick={onClick}
-          location={location}
           to="/Portfolio/about"
         />
         <li onClick={handleContact} className="cursor-pointer">
