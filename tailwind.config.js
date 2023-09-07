@@ -7,6 +7,8 @@ export default {
         primary: '#10E710',
         secondary: '#222',
         details: '#444',
+        emphasis: '#E8A005',
+        primaryDarken: '#108810'
       },
       fontFamily: {
         title: 'Hind, sans-serif',
