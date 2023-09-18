@@ -8,6 +8,7 @@ import chelsea from '../assets/chelsea.png';
 import Skillset from '../modules/Skillset';
 import recipescalc from '../assets/recipescalc.png';
 import football from '../assets/football.png';
+import rickAndMorty from '../assets/rm.png'
 import { motion, useScroll } from 'framer-motion';
 
 export default function Welcome() {
@@ -66,6 +67,13 @@ export default function Welcome() {
             :
           </motion.h2>
           <CardsContainer className="flex flex-wrap gap-10 md:grid items-center justify-center">
+            <Card label={'Rick and Morty DB'} src={rickAndMorty}>
+              <CardContent
+                linkCode='https://github.com/FrancoASalinas/rick-and-morty'
+                linkPage={'https://rickandmorty-db.vercel.app/'}
+                desc="NextJS app where the user can look for characters, locations and episodes of the Rick and Morty universe thanks to Rick and Morty API (GraphQL), I used Typescript for this project."
+              />
+            </Card>
             <Card label={'Football Stats'} src={football}>
               <CardContent
                 linkCode='https://github.com/FrancoASalinas/FootballStats-v2'
@@ -85,15 +93,6 @@ export default function Welcome() {
                 desc="First Webpage I made, I used vanilla Javascript"
                 linkCode='https://github.com/FrancoASalinas/webpage-project'
                 linkPage="https://francoasalinas.github.io/webpage-project/"
-              />
-            </Card>
-            <Card label={'Recipes Calculator'} src={recipescalc}>
-              <CardContent
-              linkCode='https://github.com/FrancoASalinas/Recipes-calculator'
-                linkPage={
-                  'https://francoasalinas.github.io/Recipes-calculator/'
-                }
-                desc="SPA that calculates the amount of ingredients for a given recipe with a modified output target. I made this one using React & MaterialUI"
               />
             </Card>
           </CardsContainer>
