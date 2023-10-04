@@ -11,6 +11,7 @@ import chelsea from '../assets/chelsea.png';
 import recipescalc from '../assets/recipescalc.png';
 import football from '../assets/football.png';
 import rickAndMorty from '../assets/rm.png'
+import reciper from '../assets/reciper-narrow.png'
 
 export default function Projects() {
   return (
@@ -41,6 +42,14 @@ export default function Projects() {
               linkPage="https://francoasalinas.github.io/Chelsea-clone-project/"
             />
           </Card>
+          <Card label="Reciper" src={reciper} cover>
+              <CardContent
+                desc="Reciper is an app for resizing recipes, I used React, Tailwind and react-router"
+                linkCode='https://github.com/FrancoASalinas/Recipes-calculator/'
+                linkPage="https://francoasalinas.github.io/Recipes-calculator/"
+              />
+            </Card>
+
           <Card label="WebPage Project" src={webpage} cover>
             <CardContent
               desc="First Webpage I made, I used vanilla Javascript"

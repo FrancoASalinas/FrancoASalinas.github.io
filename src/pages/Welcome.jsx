@@ -3,10 +3,9 @@ import Card from '../modules/Card';
 import CardContent from '../modules/CardContent';
 import CardsContainer from '../modules/CardsContainer';
 import Typewriter from 'typewriter-effect';
-import webpage from '../assets/webpage.png';
 import chelsea from '../assets/chelsea.png';
 import Skillset from '../modules/Skillset';
-import recipescalc from '../assets/recipescalc.png';
+import reciper from '../assets/reciper-narrow.png';
 import football from '../assets/football.png';
 import rickAndMorty from '../assets/rm.png'
 import { motion, useScroll } from 'framer-motion';
@@ -88,11 +87,11 @@ export default function Welcome() {
                 linkPage="https://francoasalinas.github.io/Chelsea-clone-project/"
               />
             </Card>
-            <Card label="WebPage Project" src={webpage} cover>
+            <Card label="Reciper" src={reciper} cover>
               <CardContent
-                desc="First Webpage I made, I used vanilla Javascript"
-                linkCode='https://github.com/FrancoASalinas/webpage-project'
-                linkPage="https://francoasalinas.github.io/webpage-project/"
+                desc="Reciper is an app for resizing recipes, I used React, Tailwind and react-router"
+                linkCode='https://github.com/FrancoASalinas/Recipes-calculator/'
+                linkPage="https://francoasalinas.github.io/Recipes-calculator/"
               />
             </Card>
           </CardsContainer>

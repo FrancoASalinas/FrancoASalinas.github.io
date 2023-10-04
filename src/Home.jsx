@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 import Header from './modules/Header';
 
 export default function Home() {
@@ -7,6 +7,7 @@ export default function Home() {
       <Header />
       <main className="text-white bg-black">
         <Outlet />
+        <ScrollRestoration/>
       </main>
     </>
   );
