@@ -8,6 +8,7 @@ import tailwind from '../assets/tailwind.png';
 import git from '../assets/git.png';
 import github from '../assets/github.png';
 import ts from '../assets/ts.png';
+import nextjs from '../assets/nextjs.png'
 
 export default function Skillset() {
 
@@ -47,6 +48,7 @@ export default function Skillset() {
           <CustomListItem src={tailwind} label='Tailwind' />
           <CustomListItem src={git} label='Git' />
           <CustomListItem src={github} label='Github' />
+          <CustomListItem src={nextjs} label='NextJS' />
         </motion.ul>
       </div>
     </section>
