@@ -8,7 +8,9 @@ import tailwind from '../assets/tailwind.png';
 import git from '../assets/git.png';
 import github from '../assets/github.png';
 import ts from '../assets/ts.png';
-import nextjs from '../assets/nextjs.png'
+import nextjs from '../assets/nextjs.png';
+import node from '../assets/node.png';
+import psql from '../assets/psql.png';
 
 export default function Skillset() {
 
@@ -49,6 +51,8 @@ export default function Skillset() {
           <CustomListItem src={git} label='Git' />
           <CustomListItem src={github} label='Github' />
           <CustomListItem src={nextjs} label='NextJS' />
+          <CustomListItem src={node} label='Node' />
+          <CustomListItem src={psql} label='PostgreSQL' />
         </motion.ul>
       </div>
     </section>
