@@ -7,7 +7,7 @@ export default function CardContent({ desc, linkCode, linkPage, children }) {
           <a
             href={linkPage}
             target='_blank'
-            className='bg-emphasis text-black rounded-md p-2 m-1 hover:scale-110 transition-all'
+            className='bg-emphasis text-primaryDarken rounded-md p-2 m-1 hover:scale-110 transition-all'
           >
             Visit the Page
           </a>

@@ -57,7 +57,7 @@ export default function Welcome() {
             transition={{ delay: 1, type: 'just' }}
           >
             These are some of my{' '}
-            <Link to='works' className='text-[#E8A005] underline'>
+            <Link to='works' className='underline text-primary decoration-[#474747]'>
               projects
             </Link>
             :
