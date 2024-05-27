@@ -1,7 +1,7 @@
-export default function CardContent({ desc, linkCode, linkPage, children }) {
+export default function CardContent({ description, linkCode, linkPage, children }) {
   return (
     <div className=' h-full flex flex-col justify-between items-center'>
-      <p className='text-center'>{desc}</p>
+      <p className='text-center'>{description}</p>
       <div className='justify-center flex'>
         {linkPage && (
           <a
