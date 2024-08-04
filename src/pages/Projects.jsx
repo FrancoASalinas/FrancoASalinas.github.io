@@ -10,6 +10,7 @@ import {
   ToDoList,
   Weather,
   WebpageProject,
+  SlumberSync,
 } from '../modules/ProjectCards';
 
 export default function Projects() {
@@ -20,6 +21,7 @@ export default function Projects() {
           Here you can see all my projects:
         </header>
         <CardsContainer>
+          <SlumberSync />
           <SayIt />
           <RickandMorty />
           <FootballStats />
