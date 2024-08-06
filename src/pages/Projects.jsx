@@ -11,6 +11,7 @@ import {
   Weather,
   WebpageProject,
   SlumberSync,
+  WeatherExplorer,
 } from '../modules/ProjectCards';
 
 export default function Projects() {
@@ -21,6 +22,7 @@ export default function Projects() {
           Here you can see all my projects:
         </header>
         <CardsContainer>
+          <WeatherExplorer />
           <SlumberSync />
           <SayIt />
           <RickandMorty />

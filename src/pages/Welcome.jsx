@@ -3,7 +3,7 @@ import CardsContainer from '../modules/CardsContainer';
 import Typewriter from 'typewriter-effect';
 import Skillset from '../modules/Skillset';
 import { motion } from 'framer-motion';
-import {SayIt, RickandMorty, FootballStats, Chelsea, Reciper, SlumberSync} from '../modules/ProjectCards';
+import {SayIt, RickandMorty, FootballStats, Chelsea, Reciper, SlumberSync, WeatherExplorer} from '../modules/ProjectCards';
 
 export default function Welcome() {
   return (
@@ -63,10 +63,10 @@ export default function Welcome() {
             :
           </motion.h2>
           <CardsContainer className='flex flex-wrap gap-10 md:grid items-center justify-center'>
+            <WeatherExplorer />
             <SlumberSync/>
             <SayIt />
             <RickandMorty/>
-            <FootballStats/>
             <Chelsea/>
             <Reciper/>
           </CardsContainer>

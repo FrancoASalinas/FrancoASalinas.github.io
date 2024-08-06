@@ -11,12 +11,22 @@ import rickAndMorty from '../assets/rm.png';
 import reciper from '../assets/reciper-narrow.png';
 import sayIt from '../assets/SayItHome.png';
 import slumberSync from '../assets/SlumberSync.png';
+import weatherExplorer from '../assets/weather-explorer.png';
 
-export const SayIt = () => (
+export const WeatherExplorer = () => (
+    <Card cover={true} label='Weather Explorer' src={weatherExplorer}>
+      <CardContent
+        description='Application where the user can see the weather in any city of the world, also including an interactive world map showing different data like temperature an wind speed.'
+        linkCode={'https://github.com/FrancoASalinas/Weather-Explorer'}
+        linkPage={'https://francoasalinas.github.io/Weather-Explorer/'}
+      />
+    </Card>
+  ),
+  SayIt = () => (
     <Card label={'SayIt'} src={sayIt}>
       <CardContent
         linkCode='https://github.com/FrancoASalinas/Blog-Project'
-        description='Social Webpage where the user can do things like create posts and look for other users. This is my first fullstack project, I used node with express and PostgreSQL on the backend and react on the frontend.'
+        description='Social Webpage where the user can do things like create posts and look for other users. This is my first fullstack project, I used node with express and PostgreSQL on the backend, react on the frontend.'
       />
     </Card>
   ),
